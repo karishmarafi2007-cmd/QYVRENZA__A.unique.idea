@@ -15,15 +15,21 @@ const progressLabels = [
 ];
 
 function showStep(nextStep) {
-    currentStep = nextStep;
+    const clampedStep = Math.min(Math.max(nextStep, 0), steps.length - 1);
+    currentStep = clampedStep;
     steps.forEach((step, index) => {
         step.hidden = index !== currentStep;
         step.classList.toggle('is-active', index === currentStep);
     });
-    stepLabel.textContent = progressLabels[currentStep][0];
-    stepCount.textContent = progressLabels[currentStep][1];
-    progressFill.style.width = `${[0, 33, 66, 100, 100][currentStep]}%`;
-    document.querySelector('.setup-main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (stepLabel && stepCount && progressFill) {
+        stepLabel.textContent = progressLabels[currentStep][0];
+        stepCount.textContent = progressLabels[currentStep][1];
+        progressFill.style.width = `${[0, 33, 66, 100, 100][currentStep]}%`;
+    }
+    const setupMain = document.querySelector('.setup-main');
+    if (setupMain) {
+        setupMain.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function validateStep() {
@@ -63,6 +69,7 @@ function fillSummary() {
 
 document.querySelectorAll('.next-button').forEach((button) => {
     button.addEventListener('click', () => {
+        if (button.closest('.wizard-step')?.hidden) return;
         if (!validateStep()) return;
         if (currentStep === 3) fillSummary();
         showStep(currentStep + 1);
@@ -70,19 +77,24 @@ document.querySelectorAll('.next-button').forEach((button) => {
 });
 
 document.querySelectorAll('.back-button').forEach((button) => {
-    button.addEventListener('click', () => showStep(currentStep - 1));
+    button.addEventListener('click', () => {
+        if (button.closest('.wizard-step')?.hidden) return;
+        showStep(currentStep - 1);
+    });
 });
 
-document.querySelector('.finish-button').addEventListener('click', () => {
+document.querySelector('.finish-button')?.addEventListener('click', () => {
+    if (!toast) return;
     toast.textContent = `${document.querySelector('#summary-workspace').textContent} is ready to explore.`;
     toast.classList.add('is-visible');
     window.setTimeout(() => toast.classList.remove('is-visible'), 2800);
 });
 
-document.querySelector('.sign-in').addEventListener('click', () => {
+document.querySelector('.sign-in')?.addEventListener('click', () => {
+    if (!toast) return;
     toast.textContent = 'Sign-in is a prototype action; no account service is connected.';
     toast.classList.add('is-visible');
     window.setTimeout(() => toast.classList.remove('is-visible'), 2800);
 });
 
-form.addEventListener('submit', (event) => event.preventDefault());
+form?.addEventListener('submit', (event) => event.preventDefault());
