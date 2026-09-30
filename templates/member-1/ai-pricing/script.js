@@ -38,3 +38,15 @@ document.querySelectorAll('[data-select-plan]').forEach((button) => {
       : `${planName} selected. Checkout is not connected in this static demo.`;
   });
 });
+
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const status = document.querySelector('.contact-status');
+    if (status) {
+      status.textContent = 'Thanks — our pricing specialist will reach out within one business day.';
+    }
+    contactForm.reset();
+  });
+}
