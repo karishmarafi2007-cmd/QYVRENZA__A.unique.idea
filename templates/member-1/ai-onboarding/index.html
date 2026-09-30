@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111322">
+    <meta name="description" content="Set up your QYVRENZA AI workspace in a few thoughtful steps.">
+    <title>Set up your workspace | QYVRENZA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="setup-shell">
+        <aside class="setup-rail">
+            <a class="brand" href="../ai-saas-landing/index.html" aria-label="QYVRENZA home"><span
+                    class="brand-mark">Q</span><span>QYVRENZA</span></a>
+            <div class="rail-content">
+                <p class="rail-kicker">YOUR NEXT CHAPTER</p>
+                <h1>Make a little<br>space for<br><span>possibility.</span></h1>
+                <p class="rail-note">A few thoughtful choices help us shape a workspace that feels like yours.</p>
+                <div class="rail-orbit" aria-hidden="true">
+                    <div class="orbit-ring ring-a"></div>
+                    <div class="orbit-ring ring-b"></div>
+                    <div class="orbit-core">Q</div><i class="orbit-point point-a"></i><i
+                        class="orbit-point point-b"></i>
+                </div>
+            </div>
+            <p class="rail-footer">THE INTERFACE INTELLIGENCE COLLECTION <span>·</span> 2026</p>
+        </aside>
+        <section class="setup-main" aria-label="Workspace setup">
+            <header class="setup-top"><a href="../ai-saas-landing/index.html">← <span>Back to collection</span></a>
+                <p>ALREADY HAVE A WORKSPACE? <button class="sign-in" type="button">Sign in</button></p>
+            </header>
+            <div class="wizard-wrap">
+                <div class="progress-header">
+                    <div><span id="step-label">WELCOME</span><span id="step-count">GET STARTED</span></div>
+                    <div class="progress-track" aria-label="Setup progress"><span class="progress-fill"></span></div>
+                </div>
+                <form id="setup-form" novalidate>
+                    <section class="wizard-step is-active" data-step="0" aria-labelledby="welcome-title">
+                        <p class="step-eyebrow">A WORKSPACE THAT STARTS WITH YOU</p>
+                        <h2 id="welcome-title">Welcome to a<br>more <span>thoughtful</span> way<br>to work.</h2>
+                        <p class="step-copy">Tell us a little about what you’re here to do. We’ll make a space that
+                            helps you get there.</p>
+                        <div class="welcome-note"><span aria-hidden="true">✳</span>
+                            <p><strong>It only takes a moment.</strong><br>Your choices stay in this browser session.
+                            </p>
+                        </div>
+                        <div class="step-actions actions-end"><button class="button button-primary next-button"
+                                type="button">Let's begin <span aria-hidden="true">→</span></button></div>
+                    </section>
+                    <section class="wizard-step" data-step="1" aria-labelledby="role-title" hidden>
+                        <p class="step-eyebrow">01 / YOUR STARTING POINT</p>
+                        <h2 id="role-title">What brings<br>you <span>here?</span></h2>
+                        <p class="step-copy">Choose the one that feels closest. You can change direction anytime.</p>
+                        <fieldset class="choice-grid">
+                            <legend class="sr-only">Choose your role</legend><label class="choice-card"><input
+                                    type="radio" name="role" value="Builder"><span
+                                    class="choice-icon">⌘</span><span><strong>I'm building</strong><small>Creating a
+                                        product or company</small></span><i class="radio-mark"></i></label><label
+                                class="choice-card"><input type="radio" name="role" value="Designer"><span
+                                    class="choice-icon">◈</span><span><strong>I'm designing</strong><small>Exploring
+                                        ideas and experiences</small></span><i class="radio-mark"></i></label><label
+                                class="choice-card"><input type="radio" name="role" value="Researcher"><span
+                                    class="choice-icon">⌕</span><span><strong>I'm researching</strong><small>Learning
+                                        how intelligent tools work</small></span><i
+                                    class="radio-mark"></i></label><label class="choice-card"><input type="radio"
+                                    name="role" value="Team leader"><span class="choice-icon">◎</span><span><strong>I'm
+                                        leading a team</strong><small>Helping people do their best work</small></span><i
+                                    class="radio-mark"></i></label>
+                        </fieldset>
+                        <p class="field-error" id="role-error" aria-live="polite"></p>
+                        <div class="step-actions"><button class="button button-quiet back-button" type="button">←
+                                Back</button><button class="button button-primary next-button" type="button">Continue
+                                <span aria-hidden="true">→</span></button></div>
+                    </section>
+                    <section class="wizard-step" data-step="2" aria-labelledby="workspace-title" hidden>
+                        <p class="step-eyebrow">02 / GIVE IT A NAME</p>
+                        <h2 id="workspace-title">Where will<br>your ideas <span>live?</span></h2>
+                        <p class="step-copy">Give your workspace a name. Keep it simple; you can refine it later.</p>
+                        <label class="field-label" for="workspace-name">WORKSPACE NAME</label><input class="text-input"
+                            id="workspace-name" name="workspace" type="text" maxlength="40"
+                            placeholder="e.g. Northstar Studio" autocomplete="organization"
+                            aria-describedby="workspace-hint workspace-error">
+                        <p class="field-hint" id="workspace-hint">A team, a project, or a name that inspires you.</p>
+                        <p class="field-error" id="workspace-error" aria-live="polite"></p>
+                        <label class="field-label optional-label" for="workspace-size">TEAM SIZE
+                            <span>OPTIONAL</span></label><select class="text-input select-input" id="workspace-size"
+                            name="size">
+                            <option value="Just me">Just me</option>
+                            <option value="2–5 people">2–5 people</option>
+                            <option value="6–20 people">6–20 people</option>
+                            <option value="21+ people">21+ people</option>
+                        </select>
+                        <div class="step-actions"><button class="button button-quiet back-button" type="button">←
+                                Back</button><button class="button button-primary next-button" type="button">Continue
+                                <span aria-hidden="true">→</span></button></div>
+                    </section>
+                    <section class="wizard-step" data-step="3" aria-labelledby="interest-title" hidden>
+                        <p class="step-eyebrow">03 / FOLLOW YOUR CURIOSITY</p>
+                        <h2 id="interest-title">What are you<br><span>exploring?</span></h2>
+                        <p class="step-copy">Pick at least one. We’ll use your interests to shape your starting view.
+                        </p>
+                        <fieldset class="interest-grid">
+                            <legend class="sr-only">Select your interests</legend><label class="interest-option"><input
+                                    type="checkbox" name="interest" value="Generative AI"><span
+                                    class="interest-symbol">✳</span><span>Generative AI</span><i></i></label><label
+                                class="interest-option"><input type="checkbox" name="interest"
+                                    value="Machine learning"><span class="interest-symbol">⌘</span><span>Machine
+                                    learning</span><i></i></label><label class="interest-option"><input type="checkbox"
+                                    name="interest" value="Product design"><span
+                                    class="interest-symbol">◈</span><span>Product design</span><i></i></label><label
+                                class="interest-option"><input type="checkbox" name="interest" value="Automation"><span
+                                    class="interest-symbol">↗</span><span>Automation</span><i></i></label><label
+                                class="interest-option"><input type="checkbox" name="interest"
+                                    value="Data & insights"><span class="interest-symbol">▥</span><span>Data &amp;
+                                    insights</span><i></i></label><label class="interest-option"><input type="checkbox"
+                                    name="interest" value="Creative tools"><span
+                                    class="interest-symbol">✧</span><span>Creative tools</span><i></i></label>
+                        </fieldset>
+                        <p class="field-error" id="interest-error" aria-live="polite"></p>
+                        <div class="step-actions"><button class="button button-quiet back-button" type="button">←
+                                Back</button><button class="button button-primary next-button" type="button">Create my
+                                space <span aria-hidden="true">→</span></button></div>
+                    </section>
+                    <section class="wizard-step completion-step" data-step="4" aria-labelledby="complete-title" hidden>
+                        <div class="completion-mark" aria-hidden="true">✓</div>
+                        <p class="step-eyebrow">YOUR SPACE IS READY</p>
+                        <h2 id="complete-title">A good place<br>to <span>begin.</span></h2>
+                        <p class="step-copy">Your workspace is set up. Here’s the shape you gave it.</p>
+                        <div class="summary-box">
+                            <div><span>WORKSPACE</span><strong id="summary-workspace"></strong></div>
+                            <div><span>YOUR ROLE</span><strong id="summary-role"></strong></div>
+                            <div><span>TEAM SIZE</span><strong id="summary-size"></strong></div>
+                            <div><span>EXPLORING</span><strong id="summary-interests"></strong></div>
+                        </div>
+                        <div class="step-actions actions-end"><button class="button button-primary finish-button"
+                                type="button">Enter workspace <span aria-hidden="true">↗</span></button></div>
+                    </section>
+                </form>
+                <p class="privacy-note"><span aria-hidden="true">◇</span> Made for your ideas. Your answers are not sent
+                    anywhere.</p>
+            </div>
+        </section>
+    </main>
+    <div class="toast" role="status" aria-live="polite"></div>
+</body>
+
+</html>
