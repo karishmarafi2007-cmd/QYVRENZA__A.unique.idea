@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Overview | QYVRENZA Workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg: #0b0d18;
+            --panel: rgba(15, 22, 34, 0.92);
+            --line: rgba(159, 170, 214, 0.2);
+            --text: #edf3ff;
+            --muted: #a8b5d6;
+            --accent: #90d7ff;
+            --accent-2: #b89dff;
+            --mint: #9fecc2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #090d17 0%, #111827 100%);
+            color: var(--text);
+            font-family: 'Manrope', Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .topbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 22px 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            letter-spacing: 0.28rem;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .brand-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #0b0d18;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 0.72rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #dff6ff, #9ad8ff);
+            color: #0a1020;
+            font-weight: 800;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+        }
+
+        .page-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 26px 20px 80px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.74rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            font-family: 'DM Mono', monospace;
+        }
+
+        h1 {
+            margin: 18px 0 14px;
+            font-size: clamp(2.7rem, 5vw, 4.8rem);
+            line-height: .98;
+            letter-spacing: -0.07em;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .lead {
+            max-width: 620px;
+            font-size: 1.08rem;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .primary,
+        .secondary {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 999px;
+            padding: 14px 22px;
+            font-size: 0.72rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .primary {
+            background: linear-gradient(135deg, #dff6ff, #9ad8ff);
+            color: #09131f;
+        }
+
+        .secondary {
+            border: 1px solid var(--line);
+            background: rgba(15, 22, 34, 0.7);
+        }
+
+        .panel {
+            background: rgba(17, 25, 38, 0.95);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 22px;
+        }
+
+        .mini-grid {
+            display: grid;
+            gap: 14px;
+        }
+
+        .stat {
+            background: rgba(11, 18, 29, 0.82);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 18px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.8rem;
+            letter-spacing: -0.06em;
+            margin-bottom: 6px;
+        }
+
+        .stat span {
+            font-size: 0.72rem;
+            color: var(--muted);
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .section {
+            margin-top: 32px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(15, 22, 35, 0.82);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 22px;
+        }
+
+        .card .icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(144, 215, 255, 0.12);
+            color: var(--accent);
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 760px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark">Q</span><span>QYVRENZA</span></a>
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="details.html">Overview</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a class="cta" href="contact.html">Book a call</a>
+    </header>
+    <main class="page-shell">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Workspace overview</p>
+                <h1>Turn a quiet first step into a <span>clear beginning.</span></h1>
+                <p class="lead">Onboarding should reduce friction and increase trust. The right setup flow makes a
+                    product feel intentional, personal, and easier to understand from the very first interaction.</p>
+                <div class="actions">
+                    <a class="primary" href="contact.html">Talk to the team</a>
+                    <a class="secondary" href="index.html">Back to setup</a>
+                </div>
+            </div>
+            <aside class="panel">
+                <div class="mini-grid">
+                    <div class="stat">
+                        <strong>4</strong>
+                        <span>Setup decisions</span>
+                    </div>
+                    <div class="stat">
+                        <strong>3</strong>
+                        <span>Core user moments</span>
+                    </div>
+                    <div class="stat">
+                        <strong>1</strong>
+                        <span>Clear next action</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="section">
+            <p class="eyebrow">What makes onboarding effective</p>
+            <div class="cards">
+                <article class="card">
+                    <div class="icon">01</div>
+                    <h3>Introduces intent</h3>
+                    <p>Users understand the purpose of the workspace before they are asked to make important choices.
+                    </p>
+                </article>
+                <article class="card">
+                    <div class="icon">02</div>
+                    <h3>Guides with confidence</h3>
+                    <p>Progressive steps, validation, and feedback reduce uncertainty while keeping momentum high.</p>
+                </article>
+                <article class="card">
+                    <div class="icon">03</div>
+                    <h3>Personalizes immediately</h3>
+                    <p>Each answer shapes the product experience in a way that feels more useful and more human.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

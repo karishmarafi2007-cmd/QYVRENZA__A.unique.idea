@@ -98,3 +98,15 @@ document.querySelector('.sign-in')?.addEventListener('click', () => {
 });
 
 form?.addEventListener('submit', (event) => event.preventDefault());
+
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const status = document.querySelector('.contact-status');
+        if (status) {
+            status.textContent = 'Thanks — a workspace specialist will contact you shortly.';
+        }
+        contactForm.reset();
+    });
+}

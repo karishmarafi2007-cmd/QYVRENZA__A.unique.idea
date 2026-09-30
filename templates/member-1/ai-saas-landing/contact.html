@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | QYVRENZA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        :root {
+            --bg: #0b0d18;
+            --panel: rgba(17, 22, 34, 0.9);
+            --line: rgba(142, 162, 211, 0.18);
+            --text: #edf3ff;
+            --muted: #a7b4d6;
+            --accent: #87d7ff;
+            --accent-2: #8b7dff;
+            --shadow: 0 22px 60px rgba(12, 15, 28, 0.55);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #080b13 0%, #101829 100%);
+            color: var(--text);
+            font-family: 'Manrope', Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .topbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 22px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .brand-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #0b0d18;
+            display: grid;
+            place-items: center;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+        }
+
+        .page-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 28px 22px 80px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.74rem;
+            letter-spacing: 0.16rem;
+            text-transform: uppercase;
+            font-family: 'DM Mono', monospace;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            line-height: 0.98;
+            letter-spacing: -0.07em;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .lead {
+            margin: 16px 0 0;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .details {
+            display: grid;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .detail-card {
+            background: rgba(17, 24, 37, 0.8);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 20px 22px;
+        }
+
+        .detail-card strong {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .detail-card span,
+        .detail-card a {
+            color: var(--text);
+            font-size: 1.02rem;
+        }
+
+        .contact-panel {
+            background: rgba(17, 24, 37, 0.8);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        label {
+            display: grid;
+            gap: 8px;
+            font-size: 0.8rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-family: 'DM Mono', monospace;
+        }
+
+        input,
+        textarea {
+            border: 1px solid var(--line);
+            background: rgba(11, 15, 23, 0.7);
+            color: var(--text);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background: linear-gradient(135deg, #dff6ff, #8be3ff);
+            color: #09111d;
+            padding: 14px 22px;
+            border-radius: 999px;
+            font-weight: 800;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            cursor: pointer;
+        }
+
+        .contact-status {
+            min-height: 22px;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 760px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark">Q</span><span>QYVRENZA</span></a>
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="details.html">Overview</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a class="brand" href="index.html" aria-label="QYVRENZA home"><span
+                style="font-size:0.7rem; letter-spacing:0.08rem; text-transform:uppercase;">Launch</span></a>
+    </header>
+    <main class="page-shell">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Contact / Start a project</p>
+                <h1>Let’s shape a <span>more intelligent</span> product story.</h1>
+                <p class="lead">Tell us about your product, the user moment you’re solving, and what success looks like.
+                    We’ll help map a polished, usable experience that feels as mature as the idea behind it.</p>
+                <div class="details">
+                    <div class="detail-card">
+                        <strong>Email</strong>
+                        <a href="mailto:hello@qyvrenza.com">hello@qyvrenza.com</a>
+                    </div>
+                    <div class="detail-card">
+                        <strong>Call</strong>
+                        <span>+1 (415) 555-0142</span>
+                    </div>
+                    <div class="detail-card">
+                        <strong>Studio</strong>
+                        <span>425 Mission Street, San Francisco, CA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-panel">
+                <form class="contact-form">
+                    <div class="row">
+                        <label>
+                            Name
+                            <input type="text" name="name" placeholder="Your name" required>
+                        </label>
+                        <label>
+                            Company
+                            <input type="text" name="company" placeholder="Company name">
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            Email
+                            <input type="email" name="email" placeholder="you@company.com" required>
+                        </label>
+                        <label>
+                            Project type
+                            <input type="text" name="type" placeholder="AI product, SaaS, onboarding">
+                        </label>
+                    </div>
+                    <label>
+                        Project brief
+                        <textarea name="message"
+                            placeholder="Tell us what you’re building and what kind of experience you need."
+                            required></textarea>
+                    </label>
+                    <button class="submit-btn" type="submit">Send inquiry</button>
+                    <div class="contact-status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

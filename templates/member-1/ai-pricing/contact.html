@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | QYVRENZA Pricing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        :root {
+            --bg: #0b0d18;
+            --card: rgba(15, 21, 35, 0.9);
+            --line: rgba(169, 181, 221, 0.2);
+            --text: #edf3ff;
+            --muted: #a8b5d6;
+            --accent: #8ae0ff;
+            --accent-2: #b19cff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #090d17 0%, #0f1525 100%);
+            color: var(--text);
+            font-family: 'Manrope', Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .topbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 22px 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.78rem;
+            letter-spacing: 0.28rem;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .brand-mark {
+            width: 28px;
+            height: 28px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #0b0d18;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 0.72rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+        }
+
+        .page-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 28px 20px 80px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 28px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            font-size: 0.74rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            font-family: 'DM Mono', monospace;
+        }
+
+        h1 {
+            margin: 18px 0 16px;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            line-height: .98;
+            letter-spacing: -0.07em;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .lead {
+            font-size: 1.06rem;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .contact-cards {
+            display: grid;
+            gap: 16px;
+            margin-top: 26px;
+        }
+
+        .card {
+            background: rgba(17, 25, 38, 0.9);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 18px 20px;
+        }
+
+        .card strong {
+            display: block;
+            color: var(--accent);
+            font-size: 0.72rem;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            font-family: 'DM Mono', monospace;
+            margin-bottom: 8px;
+        }
+
+        .panel {
+            background: rgba(17, 25, 38, 0.95);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 28px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        label {
+            display: grid;
+            gap: 8px;
+            font-size: 0.76rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-family: 'DM Mono', monospace;
+        }
+
+        input,
+        textarea {
+            border: 1px solid var(--line);
+            background: rgba(10, 16, 26, 0.72);
+            color: var(--text);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            border: none;
+            background: linear-gradient(135deg, #dff5ff, #94d8ff);
+            color: #09111d;
+            padding: 14px 22px;
+            border-radius: 999px;
+            font-weight: 800;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            cursor: pointer;
+        }
+
+        .contact-status {
+            min-height: 22px;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 760px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-mark">Q</span><span>QYVRENZA</span></a>
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="details.html">Overview</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a class="brand" href="index.html" aria-label="Pricing home"><span
+                style="font-size:0.7rem; letter-spacing:0.08rem; text-transform:uppercase;">Plans</span></a>
+    </header>
+    <main class="page-shell">
+        <section class="content">
+            <div>
+                <p class="eyebrow">Contact / team</p>
+                <h1>We’ll help you choose the plan with <span>more confidence.</span></h1>
+                <p class="lead">Share your team size, timeline, and growth goals. We’ll turn the plan details into a
+                    practical recommendation and make sure the next step feels clear.</p>
+                <div class="contact-cards">
+                    <div class="card">
+                        <strong>Email</strong>
+                        <span>hello@qyvrenza.com</span>
+                    </div>
+                    <div class="card">
+                        <strong>Phone</strong>
+                        <span>+1 (415) 555-0108</span>
+                    </div>
+                    <div class="card">
+                        <strong>Hours</strong>
+                        <span>Mon–Fri · 9:00–18:00 PT</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <form class="contact-form">
+                    <div class="row">
+                        <label>
+                            Name
+                            <input type="text" name="name" placeholder="Your full name" required>
+                        </label>
+                        <label>
+                            Team size
+                            <input type="text" name="team" placeholder="2–5 people">
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            Email
+                            <input type="email" name="email" placeholder="you@company.com" required>
+                        </label>
+                        <label>
+                            Interest
+                            <input type="text" name="interest" placeholder="Studio / Company">
+                        </label>
+                    </div>
+                    <label>
+                        Your goals
+                        <textarea name="message"
+                            placeholder="Tell us what your team is trying to accomplish and how soon you need to launch."
+                            required></textarea>
+                    </label>
+                    <button class="submit-btn" type="submit">Send inquiry</button>
+                    <div class="contact-status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
