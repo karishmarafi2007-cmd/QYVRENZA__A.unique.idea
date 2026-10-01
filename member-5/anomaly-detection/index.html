@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QYVRENZA - Anomaly Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">QYVRENZA</div>
+
+    <nav>
+        <a href="../prediction-studio/index.html">Home</a>
+        <a href="index.html">AI Tools</a>
+        <a href="../analytics-dashboard/index.html">Analytics</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="profile">M</div>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+    <div>
+
+        <p class="tag">
+            AI / SECURITY INTELLIGENCE
+        </p>
+
+        <h1>
+            Anomaly Detection
+        </h1>
+
+        <p class="description">
+            Detect unusual patterns and security events using
+            intelligent AI-powered anomaly analysis.
+        </p>
+
+    </div>
+
+    <div class="scanner-box">
+
+        <div class="scanner-circle">
+            AI
+        </div>
+
+        <p>AI Scanner Ready</p>
+
+        <span>
+            Continuous monitoring active
+        </span>
+
+    </div>
+
+</section>
+
+
+<section class="stats">
+
+    <div class="stat-card">
+        <span>Total Events</span>
+        <h2>12,450</h2>
+        <p>Monitored events</p>
+    </div>
+
+    <div class="stat-card">
+        <span>Anomalies</span>
+        <h2>37</h2>
+        <p>Detected anomalies</p>
+    </div>
+
+    <div class="stat-card">
+        <span>Detection Rate</span>
+        <h2>98.2%</h2>
+        <p>AI accuracy</p>
+    </div>
+
+    <div class="stat-card">
+        <span>Risk Level</span>
+        <h2 class="high">HIGH</h2>
+        <p>Requires attention</p>
+    </div>
+
+</section>
+
+
+<section class="panel">
+
+    <div class="panel-header">
+
+        <div>
+
+            <p class="small-title">
+                SECURITY EVENTS
+            </p>
+
+            <h2>
+                Recent Anomalies
+            </h2>
+
+        </div>
+
+        <select id="filterSelect">
+
+            <option value="all">
+                All Events
+            </option>
+
+            <option value="critical">
+                Critical
+            </option>
+
+            <option value="warning">
+                Warning
+            </option>
+
+            <option value="normal">
+                Normal
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Event ID</th>
+                    <th>Event Type</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Anomaly Score</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="anomalyTable">
+
+                <tr data-status="critical">
+
+                    <td>EVT-1024</td>
+                    <td>Unusual Login</td>
+                    <td>10:42 AM</td>
+
+                    <td>
+                        <span class="status critical">
+                            Critical
+                        </span>
+                    </td>
+
+                    <td>96%</td>
+
+                    <td>
+                        <button onclick="showDetails('EVT-1024')">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="warning">
+
+                    <td>EVT-1023</td>
+                    <td>Traffic Spike</td>
+                    <td>10:28 AM</td>
+
+                    <td>
+                        <span class="status warning">
+                            Warning
+                        </span>
+                    </td>
+
+                    <td>78%</td>
+
+                    <td>
+                        <button onclick="showDetails('EVT-1023')">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="normal">
+
+                    <td>EVT-1022</td>
+                    <td>Normal Activity</td>
+                    <td>10:15 AM</td>
+
+                    <td>
+                        <span class="status normal">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td>21%</td>
+
+                    <td>
+                        <button onclick="showDetails('EVT-1022')">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="warning">
+
+                    <td>EVT-1021</td>
+                    <td>API Request Spike</td>
+                    <td>09:58 AM</td>
+
+                    <td>
+                        <span class="status warning">
+                            Warning
+                        </span>
+                    </td>
+
+                    <td>72%</td>
+
+                    <td>
+                        <button onclick="showDetails('EVT-1021')">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+
+                <tr data-status="normal">
+
+                    <td>EVT-1020</td>
+                    <td>Normal Activity</td>
+                    <td>09:41 AM</td>
+
+                    <td>
+                        <span class="status normal">
+                            Normal
+                        </span>
+                    </td>
+
+                    <td>18%</td>
+
+                    <td>
+                        <button onclick="showDetails('EVT-1020')">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section class="activity">
+
+    <div class="activity-card">
+
+        <p class="small-title">
+            MONITORING
+        </p>
+
+        <h2>
+            Detection Activity
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <span></span>
+
+                <div>
+                    <strong>
+                        AI model completed analysis
+                    </strong>
+
+                    <p>
+                        2 minutes ago
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span></span>
+
+                <div>
+                    <strong>
+                        Potential anomaly identified
+                    </strong>
+
+                    <p>
+                        8 minutes ago
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <span></span>
+
+                <div>
+                    <strong>
+                        Security scan completed
+                    </strong>
+
+                    <p>
+                        15 minutes ago
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="scan-card">
+
+        <div class="scan-icon">
+            AI
+        </div>
+
+        <h2>
+            Run AI Scan
+        </h2>
+
+        <p>
+            Analyse the latest events and identify
+            potential security anomalies.
+        </p>
+
+        <button
+            class="scan-btn"
+            onclick="runScan()"
+        >
+            Run AI Scan →
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="about-section">
+
+    <p class="small-title">
+        ABOUT QYVRENZA
+    </p>
+
+    <h2>
+        AI Intelligence Platform
+    </h2>
+
+    <p>
+        QYVRENZA combines intelligent prediction,
+        anomaly detection and analytics into one
+        unified AI platform.
+    </p>
+
+</section>
+
+</main>
+
+
+<footer>
+    <p>
+        © 2026 QYVRENZA — AI Intelligence Platform
+    </p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

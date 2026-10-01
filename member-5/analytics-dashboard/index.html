@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        QYVRENZA - Analytics Dashboard
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        QYVRENZA
+    </div>
+
+    <nav>
+
+        <a href="../prediction-studio/index.html">
+            Home
+        </a>
+
+        <a href="../anomaly-detection/index.html">
+            AI Tools
+        </a>
+
+        <a href="index.html">
+            Analytics
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </nav>
+
+    <div class="profile">
+        M
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="dashboard-header">
+
+    <div>
+
+        <p class="tag">
+            AI / BUSINESS INTELLIGENCE
+        </p>
+
+        <h1>
+            Analytics Dashboard
+        </h1>
+
+        <p class="description">
+            Monitor AI performance, prediction trends,
+            anomalies and intelligent insights from one
+            unified dashboard.
+        </p>
+
+    </div>
+
+
+    <div class="controls">
+
+        <select id="timeFilter">
+
+            <option value="7">
+                Last 7 Days
+            </option>
+
+            <option value="30">
+                Last 30 Days
+            </option>
+
+            <option value="90">
+                Last 90 Days
+            </option>
+
+        </select>
+
+        <button
+            class="refresh-btn"
+            onclick="refreshDashboard()"
+        >
+            ↻ Refresh
+        </button>
+
+    </div>
+
+</section>
+
+
+<section class="kpi-grid">
+
+    <div class="kpi-card">
+
+        <span>
+            Total Predictions
+        </span>
+
+        <h2>
+            12,540
+        </h2>
+
+        <p class="positive">
+            +12.8%
+        </p>
+
+    </div>
+
+
+    <div class="kpi-card">
+
+        <span>
+            Model Accuracy
+        </span>
+
+        <h2>
+            94.7%
+        </h2>
+
+        <p class="positive">
+            +2.4%
+        </p>
+
+    </div>
+
+
+    <div class="kpi-card">
+
+        <span>
+            Anomalies
+        </span>
+
+        <h2>
+            37
+        </h2>
+
+        <p class="negative">
+            -8.2%
+        </p>
+
+    </div>
+
+
+    <div class="kpi-card">
+
+        <span>
+            AI Insights
+        </span>
+
+        <h2>
+            128
+        </h2>
+
+        <p class="positive">
+            +18.5%
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="dashboard-grid">
+
+    <div class="chart-card">
+
+        <p class="small-title">
+            PERFORMANCE
+        </p>
+
+        <h2>
+            Prediction Trends
+        </h2>
+
+        <div class="chart">
+
+            <div class="bar bar1">
+                <span>Mon</span>
+            </div>
+
+            <div class="bar bar2">
+                <span>Tue</span>
+            </div>
+
+            <div class="bar bar3">
+                <span>Wed</span>
+            </div>
+
+            <div class="bar bar4">
+                <span>Thu</span>
+            </div>
+
+            <div class="bar bar5">
+                <span>Fri</span>
+            </div>
+
+            <div class="bar bar6">
+                <span>Sat</span>
+            </div>
+
+            <div class="bar bar7">
+                <span>Sun</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="anomaly-card">
+
+        <p class="small-title">
+            SECURITY
+        </p>
+
+        <h2>
+            Anomaly Distribution
+        </h2>
+
+        <div class="donut">
+            <div class="donut-center">
+                37
+                <span>
+                    Total
+                </span>
+            </div>
+        </div>
+
+        <div class="legend">
+
+            <p>
+                <span class="dot critical"></span>
+                Critical: 8
+            </p>
+
+            <p>
+                <span class="dot warning"></span>
+                Warning: 17
+            </p>
+
+            <p>
+                <span class="dot normal"></span>
+                Normal: 12
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="performance-card">
+
+    <p class="small-title">
+        MODEL PERFORMANCE
+    </p>
+
+    <h2>
+        AI Model Metrics
+    </h2>
+
+
+    <div class="metric-grid">
+
+        <div class="metric">
+
+            <span>
+                Accuracy
+            </span>
+
+            <strong>
+                94.7%
+            </strong>
+
+            <div class="metric-bar">
+                <div style="width:94.7%"></div>
+            </div>
+
+        </div>
+
+
+        <div class="metric">
+
+            <span>
+                Precision
+            </span>
+
+            <strong>
+                92.4%
+            </strong>
+
+            <div class="metric-bar">
+                <div style="width:92.4%"></div>
+            </div>
+
+        </div>
+
+
+        <div class="metric">
+
+            <span>
+                Recall
+            </span>
+
+            <strong>
+                89.8%
+            </strong>
+
+            <div class="metric-bar">
+                <div style="width:89.8%"></div>
+            </div>
+
+        </div>
+
+
+        <div class="metric">
+
+            <span>
+                F1 Score
+            </span>
+
+            <strong>
+                91.1%
+            </strong>
+
+            <div class="metric-bar">
+                <div style="width:91.1%"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="insights-card">
+
+    <div>
+
+        <p class="small-title">
+            AI GENERATED INSIGHTS
+        </p>
+
+        <h2>
+            Intelligent Analysis
+        </h2>
+
+        <p id="insightText">
+            Prediction performance is showing a positive
+            trend while anomaly frequency has decreased
+            during the selected period.
+        </p>
+
+    </div>
+
+
+    <button
+        class="insight-btn"
+        onclick="generateInsight()"
+    >
+        Generate New Insight →
+    </button>
+
+</section>
+
+
+<section id="about" class="about-section">
+
+    <p class="small-title">
+        ABOUT QYVRENZA
+    </p>
+
+    <h2>
+        AI Intelligence Platform
+    </h2>
+
+    <p>
+        QYVRENZA provides AI-powered prediction,
+        anomaly detection and analytics capabilities
+        through one connected application.
+    </p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 QYVRENZA — AI Intelligence Platform
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

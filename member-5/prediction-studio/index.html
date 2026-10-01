@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QYVRENZA - Prediction Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">QYVRENZA</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="../anomaly-detection/index.html">AI Tools</a>
+        <a href="../analytics-dashboard/index.html">Analytics</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="profile">M</div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div>
+            <p class="tag">AI / MACHINE LEARNING</p>
+
+            <h1>Prediction Studio</h1>
+
+            <p class="description">
+                Generate intelligent predictions using AI-powered
+                analysis and machine learning parameters.
+            </p>
+        </div>
+
+        <div class="ai-card">
+            <div class="ai-circle">AI</div>
+            <h3>Prediction Engine</h3>
+            <p>Model ready for analysis</p>
+        </div>
+    </section>
+
+
+    <section class="prediction-section">
+
+        <div class="input-card">
+
+            <p class="small-title">MODEL INPUT</p>
+
+            <h2>Enter Feature Values</h2>
+
+            <div class="input-grid">
+
+                <div class="input-box">
+                    <label>Feature 01</label>
+                    <input
+                        type="number"
+                        id="feature1"
+                        placeholder="Enter value"
+                    >
+                </div>
+
+                <div class="input-box">
+                    <label>Feature 02</label>
+                    <input
+                        type="number"
+                        id="feature2"
+                        placeholder="Enter value"
+                    >
+                </div>
+
+                <div class="input-box">
+                    <label>Feature 03</label>
+                    <input
+                        type="number"
+                        id="feature3"
+                        placeholder="Enter value"
+                    >
+                </div>
+
+                <div class="input-box">
+                    <label>Feature 04</label>
+                    <input
+                        type="number"
+                        id="feature4"
+                        placeholder="Enter value"
+                    >
+                </div>
+
+            </div>
+
+            <button
+                class="predict-btn"
+                onclick="generatePrediction()"
+            >
+                Generate Prediction →
+            </button>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <p class="small-title">AI RESULT</p>
+
+            <h2>Prediction Result</h2>
+
+            <div class="result-number" id="predictionValue">
+                --%
+            </div>
+
+            <p class="result-label">
+                Prediction Score
+            </p>
+
+            <div class="confidence-row">
+                <span>Confidence</span>
+                <strong id="confidenceValue">--%</strong>
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                ></div>
+            </div>
+
+            <p class="status">
+                Status:
+                <span id="resultStatus">
+                    Waiting
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="insight-card">
+
+        <p class="small-title">AI INSIGHT</p>
+
+        <h2>Model Analysis</h2>
+
+        <p id="insightText">
+            Enter the feature values and generate a prediction
+            to receive an AI-generated insight.
+        </p>
+
+    </section>
+
+
+    <section id="about" class="about-section">
+
+        <p class="small-title">ABOUT QYVRENZA</p>
+
+        <h2>AI Intelligence Platform</h2>
+
+        <p>
+            QYVRENZA is an AI-powered platform designed to provide
+            intelligent predictions, anomaly detection and analytics
+            insights through a unified interface.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 QYVRENZA — AI Intelligence Platform</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

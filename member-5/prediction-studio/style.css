@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080812;
+    color: white;
+    min-height: 100vh;
+}
+
+.header {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    border-bottom: 1px solid #24243a;
+    background: #0b0b18;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #aaaac2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #9b8cff;
+}
+
+.profile {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #9b8cff;
+    color: #080812;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+main {
+    width: 86%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 55px 0;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.tag,
+.small-title {
+    color: #9b8cff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #a9a9c2;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.ai-card {
+    width: 240px;
+    padding: 28px;
+    text-align: center;
+    background: #111120;
+    border: 1px solid #292943;
+    border-radius: 18px;
+}
+
+.ai-circle {
+    width: 75px;
+    height: 75px;
+    margin: auto auto 15px;
+    border-radius: 50%;
+    background: #9b8cff;
+    color: #080812;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 0 30px rgba(155, 140, 255, 0.35);
+}
+
+.ai-card p {
+    color: #777791;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.prediction-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 22px;
+}
+
+.input-card,
+.result-card,
+.insight-card,
+.about-section {
+    background: #111120;
+    border: 1px solid #292943;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.input-card h2,
+.result-card h2,
+.insight-card h2,
+.about-section h2 {
+    margin-bottom: 25px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.input-box label {
+    display: block;
+    color: #85859d;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px;
+    background: #18182a;
+    border: 1px solid #393952;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.input-box input:focus {
+    border-color: #9b8cff;
+}
+
+.predict-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #9b8cff;
+    color: #080812;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.predict-btn:hover {
+    background: #b1a5ff;
+}
+
+.result-number {
+    font-size: 55px;
+    font-weight: bold;
+    color: #9b8cff;
+    margin-top: 20px;
+}
+
+.result-label {
+    color: #777791;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.confidence-row {
+    display: flex;
+    justify-content: space-between;
+    color: #aaaac2;
+    font-size: 13px;
+}
+
+.progress {
+    height: 10px;
+    background: #202036;
+    border-radius: 20px;
+    margin: 12px 0 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #9b8cff;
+    transition: width 0.5s;
+}
+
+.status {
+    color: #85859d;
+    font-size: 13px;
+}
+
+.status span {
+    color: #7ee2ad;
+    font-weight: bold;
+}
+
+.insight-card {
+    margin-top: 22px;
+}
+
+.insight-card p:last-child,
+.about-section p:last-child {
+    color: #85859d;
+    line-height: 1.7;
+}
+
+.about-section {
+    margin-top: 22px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #24243a;
+    color: #5f5f76;
+    font-size: 12px;
+}
+
+@media (max-width: 850px) {
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .prediction-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        display: none;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+}
