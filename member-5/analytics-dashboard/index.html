@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>QYVRENZA - Analytics Dashboard</title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            QYVRENZA
+        </div>
+
+
+        <nav>
+
+            <a href="#">Home</a>
+
+            <a href="#">AI Tools</a>
+
+            <a href="#" class="active">
+                Analytics
+            </a>
+
+            <a href="#">About</a>
+
+        </nav>
+
+
+        <button class="profile">
+            M
+        </button>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main>
+
+
+        <!-- HEADER -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <p class="tag">
+                    AI / BUSINESS INTELLIGENCE
+                </p>
+
+                <h1>
+                    Analytics
+                    <span>Dashboard</span>
+                </h1>
+
+                <p class="description">
+
+                    Monitor AI performance, prediction
+                    trends and system intelligence
+                    from one centralized dashboard.
+
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <select id="timeFilter">
+
+                    <option value="7">
+                        Last 7 Days
+                    </option>
+
+                    <option value="30">
+                        Last 30 Days
+                    </option>
+
+                    <option value="90">
+                        Last 90 Days
+                    </option>
+
+                </select>
+
+
+                <button
+                    onclick="refreshDashboard()"
+                    class="refresh-btn">
+
+                    ↻ Refresh
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- KPI CARDS -->
+
+        <section class="kpi-grid">
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+
+                    <span>
+                        Total Predictions
+                    </span>
+
+                    <div class="kpi-icon">
+                        ◈
+                    </div>
+
+                </div>
+
+
+                <h2>
+                    12,540
+                </h2>
+
+
+                <p class="up">
+                    ↑ 12.8%
+                    <span>
+                        vs previous period
+                    </span>
+                </p>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+
+                    <span>
+                        Model Accuracy
+                    </span>
+
+                    <div class="kpi-icon">
+                        ◎
+                    </div>
+
+                </div>
+
+
+                <h2>
+                    94.7%
+                </h2>
+
+
+                <p class="up">
+                    ↑ 2.4%
+                    <span>
+                        improvement
+                    </span>
+                </p>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+
+                    <span>
+                        Anomalies
+                    </span>
+
+                    <div class="kpi-icon warning">
+                        !
+                    </div>
+
+                </div>
+
+
+                <h2>
+                    37
+                </h2>
+
+
+                <p class="down">
+                    ↓ 8.2%
+                    <span>
+                        detected
+                    </span>
+                </p>
+
+            </div>
+
+
+
+            <div class="kpi-card">
+
+                <div class="kpi-top">
+
+                    <span>
+                        AI Insights
+                    </span>
+
+                    <div class="kpi-icon">
+                        ✦
+                    </div>
+
+                </div>
+
+
+                <h2>
+                    128
+                </h2>
+
+
+                <p class="up">
+                    ↑ 18.5%
+                    <span>
+                        generated
+                    </span>
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ANALYTICS GRID -->
+
+        <section class="analytics-grid">
+
+
+            <!-- PREDICTION TREND -->
+
+            <div class="chart-card large">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <h2>
+                            Prediction Trends
+                        </h2>
+
+                        <p>
+                            AI prediction activity over time
+                        </p>
+
+                    </div>
+
+
+                    <span class="live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="chart-area">
+
+                    <div class="y-labels">
+
+                        <span>1000</span>
+                        <span>800</span>
+                        <span>600</span>
+                        <span>400</span>
+                        <span>200</span>
+                        <span>0</span>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="grid-line line1"></div>
+                        <div class="grid-line line2"></div>
+                        <div class="grid-line line3"></div>
+                        <div class="grid-line line4"></div>
+                        <div class="grid-line line5"></div>
+
+
+                        <svg
+                            viewBox="0 0 600 220"
+                            preserveAspectRatio="none">
+
+                            <polyline
+                                points="0,175 75,150 150,160 225,110 300,130 375,75 450,95 525,50 600,65"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+
+                        <div class="chart-points">
+
+                            <span style="left:0%;top:78%"></span>
+
+                            <span style="left:12.5%;top:66%"></span>
+
+                            <span style="left:25%;top:71%"></span>
+
+                            <span style="left:37.5%;top:49%"></span>
+
+                            <span style="left:50%;top:58%"></span>
+
+                            <span style="left:62.5%;top:34%"></span>
+
+                            <span style="left:75%;top:43%"></span>
+
+                            <span style="left:87.5%;top:22%"></span>
+
+                            <span style="left:100%;top:29%"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="x-labels">
+
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ANOMALY DISTRIBUTION -->
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <h2>
+                            Anomaly Distribution
+                        </h2>
+
+                        <p>
+                            Event classification
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="donut-container">
+
+                    <div class="donut">
+
+                        <div class="donut-center">
+
+                            <strong>
+                                37
+                            </strong>
+
+                            <span>
+                                Total
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="legend">
+
+                    <div>
+                        <span class="legend-dot critical"></span>
+                        Critical
+                        <strong>8</strong>
+                    </div>
+
+                    <div>
+                        <span class="legend-dot warning"></span>
+                        Warning
+                        <strong>17</strong>
+                    </div>
+
+                    <div>
+                        <span class="legend-dot normal"></span>
+                        Normal
+                        <strong>12</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- BOTTOM SECTION -->
+
+        <section class="bottom-grid">
+
+
+            <!-- MODEL PERFORMANCE -->
+
+            <div class="performance-card">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>
+                            Model Performance
+                        </h2>
+
+                        <p>
+                            Current AI model metrics
+                        </p>
+
+                    </div>
+
+                    <span>
+                        Model v2.4
+                    </span>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <div>
+
+                        <span>
+                            Accuracy
+                        </span>
+
+                        <strong>
+                            94.7%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-bar">
+
+                        <div style="width:94.7%"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="metric">
+
+                    <div>
+
+                        <span>
+                            Precision
+                        </span>
+
+                        <strong>
+                            92.4%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-bar">
+
+                        <div style="width:92.4%"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="metric">
+
+                    <div>
+
+                        <span>
+                            Recall
+                        </span>
+
+                        <strong>
+                            89.8%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-bar">
+
+                        <div style="width:89.8%"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="metric">
+
+                    <div>
+
+                        <span>
+                            F1 Score
+                        </span>
+
+                        <strong>
+                            91.1%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="metric-bar">
+
+                        <div style="width:91.1%"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AI INSIGHTS -->
+
+            <div class="insights-card">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <h2>
+                            AI Generated Insights
+                        </h2>
+
+                        <p>
+                            Intelligent observations
+                        </p>
+
+                    </div>
+
+                    <span class="ai-icon">
+                        ✦
+                    </span>
+
+                </div>
+
+
+                <div class="insight-item">
+
+                    <div class="insight-number">
+                        01
+                    </div>
+
+                    <p>
+                        Prediction activity increased
+                        significantly during the last
+                        7 days.
+                    </p>
+
+                </div>
+
+
+                <div class="insight-item">
+
+                    <div class="insight-number">
+                        02
+                    </div>
+
+                    <p>
+                        Model accuracy improved by
+                        2.4% compared with the
+                        previous period.
+                    </p>
+
+                </div>
+
+
+                <div class="insight-item">
+
+                    <div class="insight-number">
+                        03
+                    </div>
+
+                    <p>
+                        Anomaly frequency decreased
+                        while overall system stability
+                        improved.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="insight-btn"
+                    onclick="generateInsight()">
+
+                    Generate New Insight →
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 QYVRENZA · AI Intelligence Platform
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

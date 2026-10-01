@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QYVRENZA - Prediction Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">QYVRENZA</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">AI Tools</a>
+            <a href="#">Analytics</a>
+            <a href="#">About</a>
+        </nav>
+
+        <button class="profile-btn">M</button>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+            <div>
+                <p class="tag">AI / MACHINE LEARNING</p>
+
+                <h1>Prediction<br><span>Studio</span></h1>
+
+                <p class="description">
+                    Generate intelligent predictions using AI-powered
+                    machine learning models.
+                </p>
+            </div>
+
+            <div class="hero-icon">
+                ✦
+            </div>
+        </section>
+
+
+        <section class="prediction-section">
+
+            <div class="input-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h2>Prediction Parameters</h2>
+                        <p>Enter the required values to generate a prediction.</p>
+                    </div>
+
+                    <span class="status">● MODEL READY</span>
+                </div>
+
+
+                <div class="input-grid">
+
+                    <div class="input-group">
+                        <label>Feature 01</label>
+                        <input type="number" id="feature1" placeholder="Enter value">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Feature 02</label>
+                        <input type="number" id="feature2" placeholder="Enter value">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Feature 03</label>
+                        <input type="number" id="feature3" placeholder="Enter value">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Feature 04</label>
+                        <input type="number" id="feature4" placeholder="Enter value">
+                    </div>
+
+                </div>
+
+
+                <button class="predict-btn" onclick="generatePrediction()">
+                    Generate Prediction
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <div class="result-header">
+                    <h2>Prediction Result</h2>
+                    <span id="resultStatus">Waiting</span>
+                </div>
+
+                <div class="prediction-value">
+                    <span id="predictionValue">--</span>
+                    <small>Prediction Score</small>
+                </div>
+
+                <div class="confidence">
+
+                    <div class="confidence-title">
+                        <span>Confidence Score</span>
+                        <strong id="confidenceValue">--%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div id="progressBar"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="insight">
+
+                    <div class="insight-icon">✦</div>
+
+                    <div>
+                        <h3>AI Insight</h3>
+
+                        <p id="insightText">
+                            Enter your parameters and generate a prediction
+                            to view AI insights.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 QYVRENZA · AI Intelligence Platform</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

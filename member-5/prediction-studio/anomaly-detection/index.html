@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QYVRENZA - Anomaly Detection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            QYVRENZA
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">AI Tools</a>
+            <a href="#">Analytics</a>
+            <a href="#">About</a>
+        </nav>
+
+        <button class="profile-btn">
+            M
+        </button>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div>
+
+                <p class="tag">
+                    AI / SECURITY INTELLIGENCE
+                </p>
+
+                <h1>
+                    Anomaly<br>
+                    <span>Detection</span>
+                </h1>
+
+                <p class="description">
+                    Monitor your system and identify unusual
+                    patterns using AI-powered anomaly detection.
+                </p>
+
+            </div>
+
+
+            <div class="scan-box">
+
+                <div class="scan-icon">
+                    ◉
+                </div>
+
+                <p>AI SCANNER</p>
+
+                <span class="online">
+                    ● SYSTEM ONLINE
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- STAT CARDS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span>Total Events</span>
+                    <span class="stat-icon">◌</span>
+                </div>
+
+                <h2>12,450</h2>
+
+                <p class="positive">
+                    +8.4% this week
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span>Anomalies</span>
+                    <span class="stat-icon warning">!</span>
+                </div>
+
+                <h2>37</h2>
+
+                <p class="negative">
+                    +5 detected today
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span>Detection Rate</span>
+                    <span class="stat-icon">◎</span>
+                </div>
+
+                <h2>98.2%</h2>
+
+                <p class="positive">
+                    Model accuracy
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span>Risk Level</span>
+                    <span class="stat-icon danger">▲</span>
+                </div>
+
+                <h2 class="risk">
+                    HIGH
+                </h2>
+
+                <p class="negative">
+                    Requires attention
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DETECTION SECTION -->
+
+        <section class="detection-section">
+
+            <!-- ANOMALY TABLE -->
+
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <div>
+                        <h2>Recent Anomalies</h2>
+
+                        <p>
+                            AI detected unusual system activity.
+                        </p>
+                    </div>
+
+
+                    <select id="filterSelect">
+
+                        <option value="all">
+                            All Events
+                        </option>
+
+                        <option value="critical">
+                            Critical
+                        </option>
+
+                        <option value="warning">
+                            Warning
+                        </option>
+
+                        <option value="normal">
+                            Normal
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>EVENT</th>
+                                <th>TIME</th>
+                                <th>ANOMALY SCORE</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="anomalyTable">
+
+                            <tr data-status="critical">
+
+                                <td>
+                                    <strong>EVT-1024</strong>
+                                    <small>Server Activity</small>
+                                </td>
+
+                                <td>
+                                    09:42 PM
+                                </td>
+
+                                <td>
+
+                                    <div class="score">
+
+                                        <div class="score-bar">
+                                            <div style="width: 98%"></div>
+                                        </div>
+
+                                        <span>98%</span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <span class="badge critical">
+                                        Critical
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="details-btn"
+                                        onclick="showDetails('EVT-1024')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-status="warning">
+
+                                <td>
+                                    <strong>EVT-1023</strong>
+                                    <small>Network Traffic</small>
+                                </td>
+
+                                <td>
+                                    08:36 PM
+                                </td>
+
+                                <td>
+
+                                    <div class="score">
+
+                                        <div class="score-bar">
+                                            <div style="width: 87%"></div>
+                                        </div>
+
+                                        <span>87%</span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <span class="badge warning">
+                                        Warning
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="details-btn"
+                                        onclick="showDetails('EVT-1023')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-status="warning">
+
+                                <td>
+                                    <strong>EVT-1022</strong>
+                                    <small>Login Pattern</small>
+                                </td>
+
+                                <td>
+                                    07:15 PM
+                                </td>
+
+                                <td>
+
+                                    <div class="score">
+
+                                        <div class="score-bar">
+                                            <div style="width: 76%"></div>
+                                        </div>
+
+                                        <span>76%</span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <span class="badge warning">
+                                        Warning
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="details-btn"
+                                        onclick="showDetails('EVT-1022')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-status="normal">
+
+                                <td>
+                                    <strong>EVT-1021</strong>
+                                    <small>Database Query</small>
+                                </td>
+
+                                <td>
+                                    06:48 PM
+                                </td>
+
+                                <td>
+
+                                    <div class="score">
+
+                                        <div class="score-bar">
+                                            <div style="width: 32%"></div>
+                                        </div>
+
+                                        <span>32%</span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <span class="badge normal">
+                                        Normal
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="details-btn"
+                                        onclick="showDetails('EVT-1021')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr data-status="normal">
+
+                                <td>
+                                    <strong>EVT-1020</strong>
+                                    <small>API Request</small>
+                                </td>
+
+                                <td>
+                                    05:27 PM
+                                </td>
+
+                                <td>
+
+                                    <div class="score">
+
+                                        <div class="score-bar">
+                                            <div style="width: 21%"></div>
+                                        </div>
+
+                                        <span>21%</span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <span class="badge normal">
+                                        Normal
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="details-btn"
+                                        onclick="showDetails('EVT-1020')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIVITY PANEL -->
+
+            <div class="activity-card">
+
+                <div class="activity-header">
+
+                    <h2>Detection Activity</h2>
+
+                    <span>LIVE</span>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="dot critical-dot"></div>
+
+                        <div>
+
+                            <strong>Critical anomaly</strong>
+
+                            <p>
+                                Unusual server activity detected.
+                            </p>
+
+                            <small>
+                                8 minutes ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="dot warning-dot"></div>
+
+                        <div>
+
+                            <strong>Network warning</strong>
+
+                            <p>
+                                Traffic exceeded normal range.
+                            </p>
+
+                            <small>
+                                21 minutes ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="dot normal-dot"></div>
+
+                        <div>
+
+                            <strong>System scan completed</strong>
+
+                            <p>
+                                2,340 events analysed.
+                            </p>
+
+                            <small>
+                                42 minutes ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="dot normal-dot"></div>
+
+                        <div>
+
+                            <strong>AI model updated</strong>
+
+                            <p>
+                                Detection model successfully updated.
+                            </p>
+
+                            <small>
+                                1 hour ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="scan-btn"
+                    onclick="runScan()">
+
+                    Run AI Scan →
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        © 2026 QYVRENZA · AI Intelligence Platform
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
