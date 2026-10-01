@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Workflow builder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="toolbar">
+    <a class="back-link" href="../ai-agent-dashboard/index.html" aria-label="Back to dashboard">←</a>
+    <div class="title-wrap"><strong>New lead enrichment</strong><span><i></i> All changes saved</span></div>
+    <div class="toolbar-actions"><button type="button" class="secondary" id="add-step">＋ Add step</button><button type="button" class="run-button" id="run-workflow">▶ Run workflow</button><button type="button" class="menu-button" id="workflow-menu" aria-label="More options" aria-expanded="false">···</button></div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar"><div class="side-label">WORKSPACE</div><a href="../ai-agent-dashboard/index.html">⌂ &nbsp; Overview</a><a class="selected" href="index.html">⤳ &nbsp; Workflows</a><a href="#run-history">◷ &nbsp; Runs</a><div class="side-label second-label">THIS WORKFLOW</div><a href="#trigger">01 &nbsp; New lead trigger</a><a href="#enrich">02 &nbsp; Enrich company</a><a href="#slack">03 &nbsp; Notify sales team</a></aside>
+    <section class="canvas-area">
+      <div class="canvas-heading"><div><p>WORKFLOWS / LEAD GENERATION</p><h1>New lead enrichment</h1></div><span class="draft-pill">DRAFT</span></div>
+      <div class="canvas" id="workflow-canvas">
+        <div class="canvas-content" id="canvas-content"><div class="start-label">WHEN THIS HAPPENS</div>
+        <article class="step-card trigger-card" id="trigger"><div class="step-icon trigger-icon">↳</div><div class="step-text"><small>TRIGGER · HUBSPOT</small><strong>New lead created</strong><span>Starts when a contact is added</span></div><button type="button" class="step-menu" aria-label="Trigger options">···</button></article>
+        <div class="connector"><span></span></div>
+        <article class="step-card" id="enrich"><div class="step-icon ai-icon">✳</div><div class="step-text"><small>AI ACTION · ENRICHMENT</small><strong>Enrich company details</strong><span>Find industry, size, and website</span></div><button type="button" class="step-menu" aria-label="Enrichment options">···</button></article>
+        <div class="connector"><span></span></div>
+        <article class="step-card" id="slack"><div class="step-icon slack-icon">#</div><div class="step-text"><small>NOTIFICATION · SLACK</small><strong>Notify sales team</strong><span>Post a summary to #new-leads</span></div><button type="button" class="step-menu" aria-label="Notification options">···</button></article>
+        <button type="button" class="add-node" id="canvas-add">＋</button>
+        </div>
+      </div>
+      <div class="canvas-footer" id="run-history"><span id="step-count">3 steps <span class="separator">·</span> Updated a moment ago</span><span class="zoom-controls"><span>Zoom</span><button type="button" id="zoom-out" aria-label="Zoom out">−</button><output id="zoom-value">100%</output><button type="button" id="zoom-in" aria-label="Zoom in">+</button></span></div>
+    </section>
+    <aside class="config-panel" id="config-panel"><div class="config-title"><span>STEP SETTINGS</span><button type="button" id="close-settings" aria-label="Close settings">×</button></div><div class="selected-step"><div class="step-icon ai-icon">✳</div><div><strong>Enrich company details</strong><small>AI enrichment action</small></div></div><label for="instruction">INSTRUCTIONS</label><textarea id="instruction" rows="5">Use the company domain to find the industry, employee count, and a short description.</textarea><label for="output-fields">OUTPUT FIELDS</label><div id="output-fields"><div class="field-chip">Industry <button type="button" aria-label="Remove Industry field">×</button></div><div class="field-chip">Employee count <button type="button" aria-label="Remove Employee count field">×</button></div></div><button type="button" class="add-field" id="add-field">＋ Add output field</button><button type="button" class="save-config" id="save-config">Save settings</button></aside>
+  <dialog class="workflow-dialog" id="workflow-dialog"><form method="dialog"><button type="button" class="dialog-close" aria-label="Close dialog">×</button><p class="dialog-kicker">WORKFLOW BUILDER</p><h2 id="dialog-title"></h2><div id="dialog-content"></div><div class="dialog-actions"><button type="button" class="dialog-cancel" value="cancel">Cancel</button><button type="button" class="dialog-confirm" id="dialog-confirm" value="confirm">Done</button></div></form></dialog>
+  </main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Agent dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Orbit home"><span class="brand-mark">O</span> orbit<span class="brand-muted">/console</span></a>
+      <span class="workspace">Workspace <strong>Acme Studio</strong></span>
+      <button type="button" class="avatar" id="profile-button" aria-label="User profile" aria-expanded="false">JD</button>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">MONITORING</p>
+        <h1>Agent dashboard</h1>
+        <p class="subheading">A clear view of what your AI team is working on.</p>
+      </div>
+      <button type="button" class="primary-button" id="refresh-button">Refresh activity</button>
+    </section>
+
+    <section class="metrics" aria-label="Workspace summary">
+      <article class="metric"><span>Active agents</span><strong>08</strong><small class="positive">↑ 2 since yesterday</small></article>
+      <article class="metric"><span>Tasks completed</span><strong>124</strong><small>Across all agents</small></article>
+      <article class="metric"><span>Needs attention</span><strong class="attention">03</strong><small>Review required</small></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="panel-heading"><div><h2>Your agents</h2><p>Current status and assigned work</p></div><button type="button" class="text-button" id="show-all">View all</button></div>
+        <div class="agent-list" id="agent-list">
+          <article class="agent"><span class="agent-icon violet">✳</span><div class="agent-info"><strong>Research assistant</strong><span>Gathering market insights</span></div><span class="status running"><i></i>Running</span><button type="button" class="agent-action" aria-label="Manage Research assistant">···</button></article>
+          <article class="agent"><span class="agent-icon blue">✦</span><div class="agent-info"><strong>Support triage</strong><span>Sorting 18 new conversations</span></div><span class="status running"><i></i>Running</span><button type="button" class="agent-action" aria-label="Manage Support triage">···</button></article>
+          <article class="agent"><span class="agent-icon green">⌁</span><div class="agent-info"><strong>Data analyst</strong><span>Weekly report is ready</span></div><span class="status ready"><i></i>Ready</span><button type="button" class="agent-action" aria-label="Manage Data analyst">···</button></article>
+          <article class="agent"><span class="agent-icon orange">◈</span><div class="agent-info"><strong>Content planner</strong><span>Waiting for your input</span></div><span class="status paused"><i></i>Paused</span><button type="button" class="agent-action" aria-label="Manage Content planner">···</button></article>
+          <article class="agent extra-agent"><span class="agent-icon blue">✦</span><div class="agent-info"><strong>Lead qualifier</strong><span>Reviewing new prospects</span></div><span class="status running"><i></i>Running</span><button type="button" class="agent-action" aria-label="Manage Lead qualifier">···</button></article>
+          <article class="agent extra-agent"><span class="agent-icon violet">✳</span><div class="agent-info"><strong>Meeting assistant</strong><span>Calendar is up to date</span></div><span class="status ready"><i></i>Ready</span><button type="button" class="agent-action" aria-label="Manage Meeting assistant">···</button></article>
+        </div>
+      </article>
+      <article class="panel activity-panel">
+        <div class="panel-heading"><div><h2>Recent activity</h2><p>Latest updates from your agents</p></div><span class="live-label"><i></i> LIVE</span></div>
+        <ol class="activity-list">
+          <li><span class="timeline-dot violet-dot"></span><div><strong>Research assistant</strong><p>Completed competitor scan</p><time>2 min ago</time></div></li>
+          <li><span class="timeline-dot blue-dot"></span><div><strong>Support triage</strong><p>Flagged 3 conversations for review</p><time>14 min ago</time></div></li>
+          <li><span class="timeline-dot green-dot"></span><div><strong>Data analyst</strong><p>Published weekly performance report</p><time>1 hour ago</time></div></li>
+        </ol>
+      </article>
+    </section>
+    <footer>Orbit Console <span>·</span> Your agents, in sync.</footer>
+  </main>
+</body>
+</html>
