@@ -157,7 +157,8 @@ main {
 
 .panel,
 .activity-card,
-.scan-card {
+.scan-card,
+.about-section {
     background: #111120;
     border: 1px solid #292943;
     border-radius: 18px;
@@ -337,6 +338,16 @@ td button:hover {
     cursor: not-allowed;
 }
 
+.about-section {
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.about-section p:last-child {
+    color: #85859d;
+    line-height: 1.7;
+}
+
 footer {
     text-align: center;
     padding: 30px;
@@ -359,17 +370,9 @@ footer {
     .activity {
         grid-template-columns: 1fr;
     }
-
-    nav {
-        gap: 15px;
-    }
 }
 
 @media (max-width: 600px) {
-
-    .header {
-        padding: 0 5%;
-    }
 
     nav {
         display: none;

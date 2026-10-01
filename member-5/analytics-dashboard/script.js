@@ -4,16 +4,12 @@ function refreshDashboard() {
         document.querySelector(".refresh-btn");
 
     button.textContent = "Refreshing...";
-
     button.disabled = true;
-
 
     setTimeout(function () {
 
         button.textContent = "✓ Updated";
-
         button.disabled = false;
-
 
         setTimeout(function () {
 
@@ -22,9 +18,7 @@ function refreshDashboard() {
         }, 1500);
 
     }, 1000);
-
 }
-
 
 
 function generateInsight() {
@@ -32,27 +26,26 @@ function generateInsight() {
     const button =
         document.querySelector(".insight-btn");
 
+    const insightText =
+        document.getElementById("insightText");
+
     button.textContent =
         "Generating Insight...";
 
     button.disabled = true;
 
-
     setTimeout(function () {
+
+        insightText.textContent =
+            "AI analysis indicates that prediction " +
+            "performance is improving while anomaly " +
+            "frequency has decreased during the selected " +
+            "period.";
 
         button.textContent =
             "New Insight Generated ✓";
 
         button.disabled = false;
-
-
-        alert(
-            "AI Generated Insight\n\n" +
-            "Prediction performance is showing " +
-            "a positive trend while anomaly frequency " +
-            "has decreased during the selected period."
-        );
-
 
         setTimeout(function () {
 
@@ -62,9 +55,7 @@ function generateInsight() {
         }, 1500);
 
     }, 1500);
-
 }
-
 
 
 document
@@ -73,10 +64,10 @@ document
 
         const days = this.value;
 
-        console.log(
-            "Analytics period changed to " +
+        alert(
+            "Analytics period changed to Last " +
             days +
-            " days."
+            " Days."
         );
 
     });

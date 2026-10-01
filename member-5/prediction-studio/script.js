@@ -15,8 +15,6 @@ function generatePrediction() {
         return;
     }
 
-
-    // Simple demo calculation
     const average =
         (
             Number(feature1) +
@@ -24,7 +22,6 @@ function generatePrediction() {
             Number(feature3) +
             Number(feature4)
         ) / 4;
-
 
     const prediction = Math.min(
         99,
@@ -35,7 +32,6 @@ function generatePrediction() {
         99,
         Math.max(70, 70 + Math.round(prediction / 4))
     );
-
 
     document.getElementById("predictionValue").textContent =
         prediction + "%";
@@ -48,7 +44,6 @@ function generatePrediction() {
 
     document.getElementById("resultStatus").textContent =
         "Completed";
-
 
     document.getElementById("insightText").textContent =
         "The AI model generated a prediction with " +
